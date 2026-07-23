@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Senhas Seguras</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Gerador de Senhas</h1>
+      <p>Crie senhas fortes e personalizadas instantaneamente.</p>
+    </header>
+
+    <section class="display-container" aria-label="Exibição de senha">
+      <input 
+        type="text" 
+        id="passwordDisplay" 
+        readonly 
+        placeholder="Sua senha aparecerá aqui" 
+        aria-label="Senha Gerada" 
+      />
+      <div class="action-buttons">
+        <button id="regenerateBtn" class="icon-btn" title="Gerar Nova Senha" aria-label="Gerar Nova Senha">
+          🔄
+        </button>
+        <button id="copyBtn" class="btn primary-btn" aria-label="Copiar Senha">
+          Copiar
+        </button>
+      </div>
+    </section>
+
+    <section class="strength-container">
+      <div class="strength-label">
+        <span>Força da Senha:</span>
+        <strong id="strengthText">Sua força</strong>
+      </div>
+      <div class="strength-bar-wrapper">
+        <div id="strengthBar" class="strength-bar"></div>
+      </div>
+    </section>
+
+    <section class="settings-container">
+      <div class="setting-item">
+        <div class="range-header">
+          <label for="lengthSlider">Tamanho da Senha:</label>
+          <span id="lengthValue">12</span>
+        </div>
+        <input 
+          type="range" 
+          id="lengthSlider" 
+          min="6" 
+          max="32" 
+          value="12" 
+        />
+      </div>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeUppercase" checked />
+          Incluir Letras Maiúsculas (A-Z)
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeLowercase" checked />
+          Incluir Letras Minúsculas (a-z)
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeNumbers" checked />
+          Incluir Números (0-9)
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeSymbols" checked />
+          Incluir Símbolos (!@#$%^&*)
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
